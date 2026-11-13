@@ -11,6 +11,7 @@ test('unknown routes return a JSON 404 response', async () => {
 
         assert.equal(response.status, 404);
         assert.deepEqual(await response.json(), {
+            error: 'Not Found',
             message: 'Route not found: /missing',
         });
     } finally {

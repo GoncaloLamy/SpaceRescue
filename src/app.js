@@ -8,7 +8,7 @@ const app = express();
 
 app.use(morgan('dev'));
 app.use(express.json());
-app.use(router);
+app.use('/api', router);
 app.use((request, response, next) => {
     const error = new Error(`Route not found: ${request.originalUrl}`);
     error.statusCode = 404;
